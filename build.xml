@@ -1,0 +1,40 @@
+<project name="SFDC TEST RUNNER" default="run" basedir=".">
+
+	<!-- Set the directory path -->
+	<property name="dir.build" value="build" />
+	<property name="dir.library" value="lib" />
+
+	<!-- Set the classpath elements -->
+	<path id="master-classpath">
+		<fileset dir="${dir.library}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${dir.build}/classes" />
+	</path>
+
+	<!-- Default target  -->
+	<target name="all" depends="clean,prepare,compile" description="Clean build and create directories, then compile" />
+
+	<!-- Clean the existing directories -->
+	<target name="clean" description="Delete old build and dist directories">
+		<delete dir="${dir.build}" />
+	</target>
+
+	<!-- create the folder structure -->
+	<target name="prepare" description="Create the directory structure">
+		<mkdir dir="${dir.build}/classes" />
+	</target>
+
+	<!-- Compilation target -->
+	<target name="compile" description="Compile Java sources">
+
+		<!-- Compile Java classes as necessary -->
+		<javac srcdir="src" destdir="${dir.build}/classes" classpathref="master-classpath" />
+	</target>
+
+	<!-- create a run target -->
+	<target name="run" description="Run the utility">
+		<java classname="com.sfdc.ReportCreator" classpathref="master-classpath" fork="true" />
+	</target>
+	
+</project>
