@@ -1,0 +1,8 @@
+Run Test and Email:
+For deploying the code in to production or upload a package, your code coverage should be above 75% and no trigger should be with the 0% coverage otherwise salesforce doesn’t allow to deploy or upload.
+Suppose, at the time of class creation developer implemented the test method as well. After some time on client request some changes have been made in controller and developer forgot to modify the test method. At the time of deployment this failure and the lack of coverage will not allow to deploy the code. These culprits can be a cause to cross the deadlines.
+So get rid from this panic this utility I created.  Using this tool Run All test can be scheduled and result will be emailed on to the specified email addresses. So each morning you access your email, RunAllTest.xls will be there.  By looking this you will always be updated with your coverage part and failures. This will reduce the last moment pain for developers.
+
+Prerequisite:
+1.	Set your Java and Ant path in compile.bat and email-file.bat files.
+
