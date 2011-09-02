@@ -1,0 +1,3 @@
+Test Automation by Test Automation is licensed under a Creative Commons Attribution 3.0 Unported License.
+Based on a work at simplyforce.com.
+Permissions beyond the scope of this license may be available at http://simplyforce.com/.
