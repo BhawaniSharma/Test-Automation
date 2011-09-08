@@ -1,8 +1,19 @@
 Run Test and Email:
-For deploying the code in to production or upload a package, your code coverage should be above 75% and no trigger should be with the 0% coverage otherwise salesforce doesn�t allow to deploy or upload.
+For deploying the code in to production or upload a package, your code coverage should be above 75% and no trigger should be with the 0% coverage otherwise salesforce doesn’t allow to deploy or upload.
 Suppose, at the time of class creation developer implemented the test method as well. After some time on client request some changes have been made in controller and developer forgot to modify the test method. At the time of deployment this failure and the lack of coverage will not allow to deploy the code. These culprits can be a cause to cross the deadlines.
 So get rid from this panic this utility I created.  Using this tool Run All test can be scheduled and result will be emailed on to the specified email addresses. So each morning you access your email, RunAllTest.xls will be there.  By looking this you will always be updated with your coverage part and failures. This will reduce the last moment pain for developers.
 
 Prerequisite:
-1.	Set your Java and Ant path in compile.bat and email-file.bat files.
+1.  Set your Java and Ant path in compile.bat and email-file.bat files.
 
+Setps to setup:
+1.Download complete code from code share and extract it to a local directory
+2.Setup your java and ant path in compile.bat and email-file.bat file.
+3.Get your organization Wsdl files
+4.PUT WSDL FILES IN ECLIPSE WORKSPACE
+5.GENERATE CLIENT FROM WSDL FILES(You  can use the other tools as well, but I used eclipse as it is much) easier to use)
+6.OPEN WORKSPACE AND COPY SRC->COM->SFORCE FOLDER
+7.PASTE SFORCE FOLDER IN TEST RUNNER-> SRC -> COM
+8.EXECUTE compile.bat
+9.Update build.properties file with the salesforce credentials and email addresses on which execution result supposed to be sent.
+10.Now project has been set up and you can execute email-file.bat to execute the code. It will create a file Coverage result in your local base directory and will send the same file as an attachment to the addresses defined in batch file . This is an executable file so can also be scheduled for daily basis. A sample result file is already there in a folder named “Sample”.
