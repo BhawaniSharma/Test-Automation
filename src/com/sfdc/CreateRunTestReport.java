@@ -54,10 +54,10 @@ public class CreateRunTestReport {
 						.getNumLocationsNotCovered();
 
 				// get the number of lines covered
-				Integer numOfLinesConvered = result.getNumLocations();
+				Integer numOfTotalLines = result.getNumLocations();
 
-				Double coverageResult = (numOfLinesConvered * 1.0)
-						/ (numOfLinesConvered + numOfLinesNotCovered) * 100;
+				Double coverageResult = (((numOfTotalLines - numOfLinesNotCovered) * 1.0)
+						/ numOfTotalLines) * 100;
 
 				// set the properties
 				listClassCoverageResult[i].setClassName(result.getName());
