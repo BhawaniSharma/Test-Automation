@@ -42,5 +42,4 @@ public class Constants {
 	
 	//EXCEL file extension
 	public static final String EXTENSION_TYPE_EXCEL = "xls";
-	public static final String AUTHER = "auther";
 }
